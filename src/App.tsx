@@ -506,45 +506,6 @@ function App() {
       {showWorkspace ? (
         <main className="lab-layout">
           <section className="stage-panel">
-            <div className="stage-header">
-              <div>
-                <p className="field-label">Live Playtest</p>
-                <h2>{isGenerating ? 'Generating Prototype' : liveTitle}</h2>
-                <p>
-                  {isGenerating
-                    ? 'Checkpoint is shaping your idea into a playable survival prototype with live-tunable systems.'
-                    : `${liveObjective} The studio direction stays broad, while this build showcases the survival loop as the live foundation.`}
-                </p>
-              </div>
-              {!isGenerating ? (
-                <div className="stage-quick-actions">
-                  <button type="button" className="action-accent" onClick={handleMakeHarder}>
-                    Make Harder
-                  </button>
-                  <button type="button" className="action-neutral" onClick={handleChangeTheme}>
-                    Change Theme
-                  </button>
-                </div>
-              ) : null}
-            </div>
-
-            {!isGenerating && generatedGame ? (
-              <div className="stage-summary-card">
-                <div>
-                  <span className="stage-summary-label">Generated Title</span>
-                  <strong>{generatedGame.config.title}</strong>
-                </div>
-                <div>
-                  <span className="stage-summary-label">Objective</span>
-                  <p>{generatedGame.config.objective}</p>
-                </div>
-                <div>
-                  <span className="stage-summary-label">Theme</span>
-                  <strong>{generatedGame.config.themeLabel}</strong>
-                </div>
-              </div>
-            ) : null}
-
             <div className={`stage-surface${isGenerating ? ' stage-surface--generating' : ''}`}>
               {isGenerating ? (
                 <div className="preview-frame preview-generating-frame">
@@ -576,6 +537,47 @@ function App() {
               ) : generatedGame ? (
                 <GamePreviewRenderer generatedGame={generatedGame} />
               ) : null}
+            </div>
+
+            <div className="stage-details">
+              {!isGenerating && generatedGame ? (
+                <div className="stage-summary-card">
+                  <div>
+                    <span className="stage-summary-label">Generated Title</span>
+                    <strong>{generatedGame.config.title}</strong>
+                  </div>
+                  <div>
+                    <span className="stage-summary-label">Objective</span>
+                    <p>{generatedGame.config.objective}</p>
+                  </div>
+                  <div>
+                    <span className="stage-summary-label">Theme</span>
+                    <strong>{generatedGame.config.themeLabel}</strong>
+                  </div>
+                </div>
+              ) : null}
+
+              <div className="stage-header">
+                <div>
+                  <p className="field-label">Live Playtest</p>
+                  <h2>{isGenerating ? 'Generating Prototype' : liveTitle}</h2>
+                  <p>
+                    {isGenerating
+                      ? 'Checkpoint is shaping your idea into a playable survival prototype with live-tunable systems.'
+                      : `${liveObjective} The studio direction stays broad, while this build showcases the survival loop as the live foundation.`}
+                  </p>
+                </div>
+                {!isGenerating ? (
+                  <div className="stage-quick-actions">
+                    <button type="button" className="action-accent" onClick={handleMakeHarder}>
+                      Make Harder
+                    </button>
+                    <button type="button" className="action-neutral" onClick={handleChangeTheme}>
+                      Change Theme
+                    </button>
+                  </div>
+                ) : null}
+              </div>
             </div>
           </section>
 
