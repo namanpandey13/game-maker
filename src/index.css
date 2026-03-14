@@ -1,28 +1,32 @@
 :root {
-  font-family: 'Avenir Next', 'Segoe UI', sans-serif;
+  font-family: 'Trebuchet MS', 'Avenir Next', 'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #15211d;
+  color: #eef8ff;
   background:
-    radial-gradient(circle at top, rgba(203, 217, 211, 0.85), transparent 38%),
-    linear-gradient(180deg, #eef2ec 0%, #e7ece5 100%);
+    radial-gradient(circle at top left, rgba(20, 199, 255, 0.14), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 73, 173, 0.12), transparent 24%),
+    linear-gradient(180deg, #060913 0%, #0b1020 48%, #090d19 100%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --page-bg: #e9eee8;
-  --panel: rgba(252, 252, 249, 0.95);
-  --panel-header: rgba(241, 244, 238, 0.95);
-  --surface: #f9faf6;
-  --surface-alt: #f1f4ee;
-  --button: #f5f7f1;
-  --button-hover: #eef3ea;
-  --text-main: #15211d;
-  --text-muted: #52625b;
-  --border: rgba(104, 126, 116, 0.22);
-  --border-strong: rgba(75, 96, 87, 0.34);
-  --accent: #2c6a56;
+  --display-font: 'Arial Black', 'Impact', 'Haettenschweiler', 'Trebuchet MS', sans-serif;
+  --page-bg: #080b15;
+  --panel: rgba(11, 16, 29, 0.9);
+  --panel-header: rgba(16, 23, 39, 0.94);
+  --surface: rgba(14, 21, 38, 0.95);
+  --surface-alt: rgba(18, 27, 48, 0.92);
+  --button: rgba(20, 28, 47, 0.96);
+  --button-hover: rgba(25, 36, 62, 0.98);
+  --text-main: #eef8ff;
+  --text-strong: #ffffff;
+  --text-muted: #8ea6c7;
+  --border: rgba(92, 141, 209, 0.18);
+  --border-strong: rgba(92, 141, 209, 0.36);
+  --accent: #29d3ff;
+  --accent-hot: #ff4fab;
 }
 
 * {

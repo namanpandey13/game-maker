@@ -1,0 +1,214 @@
+.topdown-survival-game {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(0, auto) auto auto auto auto;
+  gap: 1rem;
+}
+
+.topdown-stage-frame {
+  order: 1;
+}
+
+.topdown-meta-drawer {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.topdown-meta-summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(10, 13, 20, 0.72);
+  color: var(--text-strong);
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.topdown-meta-summary::-webkit-details-marker {
+  display: none;
+}
+
+.topdown-meta-summary strong {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--display-font);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.topdown-meta-summary span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.compact-generated-brief,
+.compact-using-assets {
+  margin-top: -0.25rem;
+}
+
+.topdown-hero-hud {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.7rem;
+}
+
+.topdown-stat-card {
+  padding: 0.85rem 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(9, 14, 25, 0.88);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.topdown-stat-card span {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.topdown-stat-card strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--text-strong);
+  font-family: var(--display-font);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.topdown-stat-card small {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--text-muted);
+}
+
+.topdown-stage-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(10, 13, 20, 0.82);
+}
+
+.topdown-stage-note span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.topdown-stage-note strong {
+  color: var(--text-strong);
+  font-size: 0.92rem;
+}
+
+.topdown-survival-game .preview-game-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.topdown-survival-canvas {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border-radius: 16px;
+  border: 1px solid rgba(41, 211, 255, 0.26);
+  background: #120d1e;
+  cursor: crosshair;
+  box-shadow:
+    0 30px 80px rgba(7, 10, 16, 0.42),
+    0 0 26px rgba(41, 211, 255, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.topdown-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(9, 12, 18, 0.84);
+}
+
+.topdown-footer-copy {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.topdown-footer p,
+.topdown-footer span {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.topdown-footer span {
+  font-size: 0.92rem;
+}
+
+.topdown-footer button {
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #2c6a56, #245747);
+  color: #f6fbf7;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 120ms ease;
+}
+
+.topdown-footer button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(20, 33, 29, 0.16);
+  filter: saturate(1.06);
+}
+
+.topdown-footer button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .topdown-meta-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topdown-hero-hud {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .topdown-stage-note {
+    align-items: flex-start;
+  }
+
+  .topdown-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .topdown-footer button {
+    width: 100%;
+  }
+}

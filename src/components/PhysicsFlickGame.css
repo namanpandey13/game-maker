@@ -1,0 +1,78 @@
+.physics-flick-game {
+  width: min(100%, 760px);
+  display: grid;
+  gap: 0.9rem;
+}
+
+.physics-flick-hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
+}
+
+.physics-flick-canvas {
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #120d1e;
+  cursor: grab;
+  box-shadow:
+    0 22px 50px rgba(15, 20, 24, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.physics-flick-canvas:active {
+  cursor: grabbing;
+}
+
+.physics-flick-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.physics-flick-footer p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.physics-flick-footer button {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #2c6a56, #245747);
+  color: #f6fbf7;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 120ms ease;
+}
+
+.physics-flick-footer button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(20, 33, 29, 0.16);
+  filter: saturate(1.06);
+}
+
+.physics-flick-footer button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .physics-flick-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .physics-flick-footer button {
+    width: 100%;
+  }
+}

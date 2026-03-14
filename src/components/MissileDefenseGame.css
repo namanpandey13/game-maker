@@ -1,0 +1,196 @@
+.missile-defense-game {
+  width: min(100%, 760px);
+  display: grid;
+  gap: 0.9rem;
+}
+
+.generated-brief {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.9fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.generated-copy,
+.generated-summary-card,
+.using-assets {
+  padding: 1rem;
+  border: 1px solid rgba(75, 96, 87, 0.28);
+  border-radius: 14px;
+  background: rgba(252, 252, 249, 0.88);
+  box-shadow: 0 8px 20px rgba(15, 25, 21, 0.05);
+}
+
+.generated-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.generated-copy h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  color: var(--text-main);
+}
+
+.generated-mission {
+  margin: 0.55rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.generated-summary-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.generated-summary-card dl {
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.generated-summary-card dl div {
+  display: grid;
+  gap: 0.16rem;
+}
+
+.generated-summary-card dt {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.generated-summary-card dd {
+  margin: 0;
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+.asset-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.asset-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(75, 96, 87, 0.2);
+  background: rgba(236, 242, 237, 0.95);
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.missile-defense-hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
+}
+
+.hud-chip {
+  min-width: 104px;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid rgba(75, 96, 87, 0.32);
+  border-radius: 12px;
+  background: rgba(252, 252, 249, 0.85);
+  box-shadow: 0 8px 20px rgba(15, 25, 21, 0.05);
+}
+
+.hud-chip span {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.hud-chip strong {
+  font-size: 0.98rem;
+  color: var(--text-main);
+}
+
+.preview-game-frame {
+  width: 100%;
+  padding: 0.9rem;
+  background:
+    linear-gradient(180deg, rgba(8, 13, 16, 0.08), rgba(8, 13, 16, 0.03)),
+    rgba(250, 251, 248, 0.82);
+}
+
+.missile-defense-canvas {
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #120d1e;
+  cursor: crosshair;
+  box-shadow:
+    0 22px 50px rgba(15, 20, 24, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.missile-defense-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.missile-defense-footer p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.missile-defense-footer button {
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  background: linear-gradient(180deg, #2c6a56, #245747);
+  color: #f6fbf7;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    filter 120ms ease;
+}
+
+.missile-defense-footer button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(20, 33, 29, 0.16);
+  filter: saturate(1.06);
+}
+
+.missile-defense-footer button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  .generated-brief {
+    grid-template-columns: 1fr;
+  }
+
+  .missile-defense-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .missile-defense-footer button {
+    width: 100%;
+  }
+}
